@@ -21,6 +21,7 @@ targetCompatibility = 1.8
 dependencies {
     compile  "org.embulk:embulk-core:0.9.5-SNAPSHOT"
     provided "org.embulk:embulk-core:0.9.5-SNAPSHOT"
+    compile ('org.komamitsu:fluency:1.7.0') { exclude module: 'msgpack-core' }
     testCompile "junit:junit:4.+"
 }
 
@@ -74,7 +75,7 @@ task gemspec {
 Gem::Specification.new do |spec|
   spec.name          = "${project.name}"
   spec.version       = "${project.version}"
-  spec.authors       = ["sakama"]
+  spec.authors       = ["Satoshi Akama"]
   spec.summary       = %[Fluentd reporter plugin for Embulk]
   spec.description   = %[Store events and logs using Fluentd on external places.]
   spec.email         = ["satoshiakama@gmail.com"]
